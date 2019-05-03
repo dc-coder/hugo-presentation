@@ -1,0 +1,33 @@
+<main class="presentation">
+
+  {{ with .Site.GetPage .Site.Params.active_presentation }}
+
+      <slide id='start' type='intro'>
+          <h1>{{ .Title }}</h1>
+          <h2>{{ .Params.subtitle }}</h2>
+          {{ if isset .Params "name" }}
+            <h2>{{ .Params.name }}</h2>
+          {{ end }}
+          <h2>{{ .Date.Format "Jan 2, 2006"}}</h2>
+          <nav>
+              <a href="#slide-1">next</a>
+          </nav>
+      </slide>
+
+      {{ $.Scratch.Set "counter" 0  }}
+      {{- range (split .Content "<hr />") -}}
+        {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+           <slide id='slide-{{$.Scratch.Get "counter"}}' class="presentation-slide">
+               <div class="presentation-slide-content">
+                  {{ . | safeHTML}}
+               </div>
+               <nav>
+                 <a href='#slide-{{ sub ($.Scratch.Get "counter") 1 }}'>prvs</a>
+                <a href='#slide-{{ add ($.Scratch.Get "counter") 1 }}'>next</a>
+              </nav>
+           </slide>
+      {{ end }}
+
+  {{ end }}
+
+</main>

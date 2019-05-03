@@ -1,0 +1,7 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Hugo Presentation"
+theme = "hugo-presents"
+
+[Params]
+  active_presentation = "hello-world.md"
