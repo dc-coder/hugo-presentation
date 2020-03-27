@@ -15,7 +15,7 @@
       </slide>
 
       {{ $.Scratch.Set "counter" 0  }}
-      {{- range (split .Content "<hr />") -}}
+      {{- range (split .Content "<hr>") -}}
         {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
            <slide id='slide-{{$.Scratch.Get "counter"}}' class="presentation-slide">
                <div class="presentation-slide-content">
