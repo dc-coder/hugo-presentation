@@ -26,6 +26,11 @@ slide {
        box-sizing: border-box;
  }
 
+ hr {
+   border:0;
+   border-bottom: 1px solid #000;
+ }
+
  slide:target {
      z-index: 2;
      display: block;
@@ -45,4 +50,28 @@ slide {
 
 nav a {
   margin-right:1rem;
+}
+
+code {
+  background-color: #f8f8f8;
+  padding: 5px 15px 5px 15px;
+}
+
+iframe {
+  width: 75% !important;
+  height: auto: !important;
+}
+
+.presentation-slide p {
+  margin-top: 5rem;
+  margin-left: 2.5rem;
+  width: 80%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-80 {
+  width: 80%;
 }
